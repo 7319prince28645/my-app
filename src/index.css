@@ -1,0 +1,142 @@
+.App {
+  font-family: sans-serif;
+  display: grid;
+  grid-template-columns: 35% 1fr;
+  height: 100vh;
+}
+.content {
+  background-image: url("./images/bg-main.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 100%;
+}
+.TextoDelantero {
+  position: relative;
+  top: 15%;
+  left: 30%;
+  width: 100%;
+  color: #fff;
+  box-sizing: border-box;
+  background-image: url("./images/delante.png");
+  background-repeat: no-repeat;
+  height: 20rem;
+  display: grid;
+  grid-template-rows: 1fr 120px;
+  grid-template-columns: 1fr 1fr;
+}
+
+.TextoDelantero::after {
+  content: "";
+  width: 3rem;
+  background-color: white;
+  position: absolute;
+  height: 3rem;
+  border-radius: 50%;
+  top: 5%;
+  left: 6%;
+}
+.TextoDelantero::before {
+  content: "";
+  width: 1.2rem;
+  border: 1px solid white;
+  position: absolute;
+  height: 1.2rem;
+  border-radius: 50%;
+  left: 16%;
+  top: 9%;
+}
+
+.Number {
+  grid-area: 1 / 1 / 2 / 3;
+  display: flex;
+  align-items: end;
+  justify-content: center;
+  letter-spacing: 4px;
+  margin: 0 2rem 1rem 0;
+  font-size: 2rem;
+}
+.Number::after {
+  content: "\00a0\00a0\00a0";
+}
+.Texto {
+  display: flex;
+  align-items: flex-start;
+  margin-left: 2.5rem;
+  font-size: 1.2rem;
+}
+.Cvv {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 7.5rem;
+  font-size: 1.2rem;
+}
+.TextoDetras {
+  position: relative;
+  top: 10%;
+  left: 50%;
+  width: 100%;
+  box-sizing: border-box;
+  background-image: url("./images/atras.png");
+  background-repeat: no-repeat;
+  height: 20rem;
+}
+.PonerCvv {
+  position: absolute;
+  top: 30%;
+  left: 67%;
+  color: #fff;
+  font-weight: 700;
+  letter-spacing: 4px;
+}
+
+@media screen and (max-width: 768px) {
+  .App {
+    grid-template-columns: 1fr;
+    grid-template-rows: 30% 1fr;
+  }
+  .TextoDelantero {
+    position: absolute;
+    top: 16%;
+    left: 5%;
+    width: 80%;
+    display: grid;
+    grid-template-rows: 1fr 35px;
+    grid-template-columns: 1fr 1fr;
+    height: 11rem;
+    border-radius: 10px;
+    z-index: 99999;
+    align-items: end;
+
+  }
+  .TextoDelantero::before{
+    left: 24%;
+    top: 13%;
+  }
+  .TextoDetras {
+    position: absolute;
+    top: 0;
+    left: 15%;
+    width: 80%;
+    height: 11rem;
+    border-radius: 10px;
+  }
+  .PonerCvv {
+    position: absolute;
+    top: 55%;
+    left: 86%;
+  }
+  .Texto {
+    margin-left: 1rem;
+    font-size: .9rem;
+  }
+  .Cvv {
+    margin-right: 1rem;
+    font-size: .9rem;
+  }
+  .Number {
+    width: 100%;
+    font-size: 1.2rem;
+    padding-left: 15px;
+  }
+}
